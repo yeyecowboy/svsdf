@@ -1,4 +1,4 @@
-task.wait(8)
+task.wait(5)
 for i,v in pairs(game:GetService("Players").yk_ts.PlayerGui.MainUI.Frames.Art.ArtInventory:GetChildren()) do
     for m,n in pairs(v:GetChildren()) do
         if n:IsA("TextLabel") then
@@ -30,6 +30,5 @@ for i,v in pairs(game:GetService("Players").yk_ts.PlayerGui.MainUI.Frames.Art.Ar
     end
 end
 task.wait(8)
-game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
-task.wait(2)
-loadstring(game:HttpGet"https://raw.githubusercontent.com/yeyecowboy/svsdf/main/hel")()
+game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+task.wait()
